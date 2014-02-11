@@ -1,0 +1,8 @@
+{
+  "name": "vHeim",
+  "dependencies" : {
+    "socket.io": "~0.9.6",
+    "mime": "~1.2.7",
+    "express": "~3.4.8"
+  }
+}

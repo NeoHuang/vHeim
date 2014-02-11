@@ -1,6 +1,6 @@
 var port = 8010;
 var express = require('express'),
-    api = require('./routes/api');
+    api = require('./libs/api');
 var app = express();
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -23,6 +23,8 @@ app.configure(function(){
 
 //JSON API
 app.get('/switches', api.switches);
+app.get('/', api.home);
+app.get('/switchOn', api.switchOn);
 //app.get('/switches/:id', api.switch);
 
 app.listen(port);
