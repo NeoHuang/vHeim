@@ -1,8 +1,29 @@
-var port = 8010;
-var express = require('express'),
-    api = require('./libs/api');
+var express = require('express');
 var app = express();
-var allowCrossDomain = function(req, res, next) {
+var config = require('./config')
+var models = require('./models');
+var routes = require('./routes');
+var api = require('./api');
+
+function setupServer(server){
+
+  models.init().then(function(){
+    return api.init();
+  }).then(function() {
+    console.log('test');
+    routes.api(server);
+    routes.admin(server);
+  }) 
+  
+  server.listen(config.port, config.host, printStart);
+  
+}
+function printStart(){
+
+  console.log("Server running at "+ config.host +':' + config.port);
+}
+setupServer(app);
+/*var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
@@ -13,20 +34,16 @@ var allowCrossDomain = function(req, res, next) {
   else{
     next();
   }
-}
+}*/
 
-app.configure(function(){
+/*app.configure(function(){
   app.use(express.methodOverride());
   app.use(allowCrossDomain);
   app.use(express.bodyParser());
-});
+});*/
 
 //JSON API
-app.get('/switches', api.switches);
-app.get('/', api.home);
-app.get('/switchOn', api.switchOn);
 //app.get('/switches/:id', api.switch);
 
-app.listen(port);
-console.log("Server running at http://localhost:" + port);
+
 
