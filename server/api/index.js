@@ -1,7 +1,7 @@
 var switches = require('./switches'); 
-var requestHandler = function(apiMethod, params){
+var requestHandler = function(apiMethod){
   return function(req, res) {
-    apiMethod.call(params).then(function(result){
+    apiMethod.call(req).then(function(result){
       res.json(result || {} );
     });
   }
