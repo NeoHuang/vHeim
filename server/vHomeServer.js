@@ -10,7 +10,6 @@ function setupServer(server){
   models.init().then(function(){
     return api.init();
   }).then(function() {
-    console.log('test');
     routes.api(server);
     routes.admin(server);
   }) 

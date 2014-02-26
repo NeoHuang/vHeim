@@ -1,7 +1,19 @@
 var when = require('when');
+var nodefn = require('when/node/function');
+var Switch = require('../models/switch');
+
 var switches = {
   getAll: function getAll(){
-    return when.resolve([{id: 0, status: 1},{id: 1, status: 0}] );
+    console.log('switches->getAll');
+    var defer = when.defer();
+    var query = Switch.find({});
+    result = query.exec().then(function(switches){
+      defer.resolve(switches);
+    }, function(err){
+      defer.reject('error');
+    }); 
+    return defer.promise;
+
   }
 }
 module.exports = switches;
