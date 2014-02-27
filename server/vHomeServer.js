@@ -6,6 +6,7 @@ var routes = require('./routes');
 var api = require('./api');
 
 function setupServer(server){
+  server.use(express.bodyParser());
 
   models.init().then(function(){
     return api.init();

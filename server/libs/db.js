@@ -1,15 +1,15 @@
 
 var mongoose = require( 'mongoose' );
+var config = require('../config');
  
 // Build the connection string
-var dbURI = 'mongodb://localhost/ConnectionTest';
  
-mongoose.connect(dbURI);
+mongoose.connect(config.dbURI);
  
 // CONNECTION EVENTS
 // When successfully connected
 mongoose.connection.on('connected', function () {
-  console.log('Mongoose default connection open to ' + dbURI);
+  console.log('Mongoose default connection open to ' + config.dbURI);
 });
  
 // If the connection throws an error

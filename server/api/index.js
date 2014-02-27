@@ -1,10 +1,10 @@
 var switches = require('./switches'); 
 var requestHandler = function(apiMethod){
   return function(req, res) {
-    apiMethod.call(req).then(function(result){
+    apiMethod(req).then(function(result){
       res.json(result || {} );
     }).otherwise(function(err){
-      res.json({error:err});
+      res.json(err);
     });
   }
 }
