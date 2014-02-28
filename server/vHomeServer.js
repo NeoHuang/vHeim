@@ -4,15 +4,21 @@ var config = require('./config')
 var models = require('./models');
 var routes = require('./routes');
 var api = require('./api');
+var path = require('path');
 
 function setupServer(server){
+  server.use(express.methodOverride());
   server.use(express.bodyParser());
+  server.set('views', path.join(__dirname, 'views'));
+  server.set('view engine', 'jade');
+  server.use(express.static(path.join(__dirname, 'public')));
 
   models.init().then(function(){
     return api.init();
   }).then(function() {
     routes.api(server);
     routes.admin(server);
+    routes.frontend(server);
   }) 
   
   server.listen(config.port, config.host, printStart);
