@@ -21,7 +21,7 @@ function setupServer(server){
     routes.frontend(server);
   }) 
   
-  server.listen(config.port, config.host, printStart);
+  server.listen(config.port, printStart);
   
 }
 function printStart(){
