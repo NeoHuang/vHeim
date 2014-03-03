@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="vHeimApp">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <title>vHeim</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/stylesheets/style.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.min.js"></script>
+        <script src="/javascripts/vHeimApp.js"></script><script src="/javascripts/controllers/switchCtrl.js"></script>
+    </head>
+    <body>
+        <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target=".navbar-collepse" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">vHeim</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/switches">Switches</a></li>
+                    <li><a href="#/xbmc">XBMC</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container"><div ng-view="ng-view">
+            </div>
+        </div>
+    </body>
+</html>

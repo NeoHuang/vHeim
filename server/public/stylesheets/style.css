@@ -1,0 +1,77 @@
+body {
+  padding-top: 50px;
+  margin: 10px;
+  background-color: rgb(7,7,7);
+}
+
+.switch-entry{
+  box-shadow: 0px 0px 3px rgb(0,208,208);
+  border: 1px solid rgb(0, 153, 153) ;
+  border-left: 5px solid rgb(0, 153, 153) ;
+  height: 80px;
+  transition: 0.2s linear all;
+  /*-webkit-transition: all 0.2s linear;*/
+  /*-moz-transition: all 0.2s linear;*/
+  /*-o-transition: all 0.2 linear;*/
+  margin-top:10px;
+  background-color: transparent;
+}
+.switch-listing.ng-enter,
+.switch-listing.ng-leave,
+.switch-listing.ng-move {
+  transition: 0.5s linear all;
+}
+
+.switch-listing.ng-leave.ng-leave-active {
+  opacity: 0;
+  height: 0;
+}
+.switch-entry:hover{
+  border: 1px solid rgb(0, 255, 255) ;
+  border-left: 5px solid rgb(0, 255, 255) ;
+  box-shadow: 0px 0px 10px rgb(0,255,255);
+  color: rgb(0, 255, 255);
+}
+
+.switch-name{
+  color: rgb(0, 153, 153);
+  font-size: 150%;
+  margin-top: 5px;
+  margin-left: 10px;
+
+}
+
+.btn-default {
+  box-shadow: 0px 0px 3px rgb(0,208,208);
+  border: 1px solid rgb(0, 153, 153) ;
+  background-color: transparent;
+  color: rgb(0, 153, 153);
+  border-radius: 0px;
+
+}
+
+.btn-default:hover {
+  background-color: transparent;
+  color: rgb(0, 255, 255);
+  border: 1px solid rgb(0, 255, 255) ;
+  box-shadow: 0px 0px 10px rgb(0,255,255);
+}
+.form-control {
+  box-shadow: 0px 0px 3px rgb(0,208,208);
+  border: 1px solid rgb(0, 153, 153) ;
+  background-color: transparent;
+  color: rgb(0, 153, 153);
+  border-radius: 0px;
+}
+.form-control:hover {
+  background-color: transparent;
+  color: rgb(0, 153, 153);
+  border: 1px solid rgb(0, 255, 255) ;
+  box-shadow: 0px 0px 10px rgb(0,255,255);
+}
+.form-control:focus {
+  background-color: transparent;
+  color: rgb(0, 153, 153);
+  border: 1px solid rgb(0, 255, 255) ;
+  box-shadow: 0px 0px 10px rgb(0,255,255);
+}

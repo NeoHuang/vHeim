@@ -1,20 +1,23 @@
 <div>
-  <div class="row">
-    <div class="col-sx-12 col-md-4">
-
-      <input class="form-control patient-search "  placeholder="Search switch" ng-model="query.name">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-10 col-md-4">
+        <input class="form-control"  placeholder="Search Switch" ng-model="query.name">
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" onclick="location.href='/#/new'">
+          <span class="glyphicon glyphicon-plus"></span> Add
+        </button>
+      </div>
     </div>
   </div>
-  <a class="patient-add-button" href='#/new' ><img src="/assets/add_user.png" width="30" height="30"></a>
 </div>
 <div >
-  
-<div class="patient-card col-md-5 col-xs-12 col-lg-3 patient-listing" ng-repeat="switch in switches|filter:query ">
-  <a class="patient-href col-md-5 col-xs-12 col-lg-3" href='{{switch.url}}'>
-  <div>
-    <div class = "patient-name">{{switch.name}}</div>
+
+  <div class="switch-entry switch-listing" ng-repeat="switch in switches|filter:query ">
+    <div class = "switch-name">{{switch.name}}</div>
+    <!--<a class="patient-href col-md-5 col-xs-12 col-lg-3" href='{{switch.url}}'>-->
+    <!--</a>-->
   </div>
-  </a>
-</div>
 
 </div> <br>
