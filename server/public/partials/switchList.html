@@ -5,7 +5,7 @@
         <input class="form-control"  placeholder="Search Switch" ng-model="query.name">
       </div>
       <div class="btn-group">
-        <button type="button" class="btn btn-default" onclick="location.href='/#/new'">
+        <button type="button" class="btn btn-default" onclick="location.href='/#/switchNew'">
           <span class="glyphicon glyphicon-plus"></span> Add
         </button>
       </div>
@@ -14,10 +14,12 @@
 </div>
 <div >
 
-  <div class="switch-entry switch-listing" ng-repeat="switch in switches|filter:query ">
-    <div class = "switch-name">{{switch.name}}</div>
-    <!--<a class="patient-href col-md-5 col-xs-12 col-lg-3" href='{{switch.url}}'>-->
-    <!--</a>-->
+  <div class="switch-entry switch-listing col-md-5" ng-repeat="switch in switches|filter:query ">
+    <span class = "switch-name">{{switch.name}}</span>
+    <div class = "switch-on-off" ng-click="turnSwitch(switch)"> 
+      <span class="glyphicon glyphicon-off"></span>
+    </div>
+
   </div>
 
 </div> <br>

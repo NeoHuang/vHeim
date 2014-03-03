@@ -11,6 +11,10 @@ vHeimApp.config(['$routeProvider',
         templateUrl: '/partials/switch.html',
         controller: 'SwitchDetailCtrl'
       }).
+      when('/switchNew', {
+        templateUrl: '/partials/switchNew.html',
+        controller: 'SwitchNewCtrl'
+      }).
       otherwise({
         redirectTo: '/switches'
       });

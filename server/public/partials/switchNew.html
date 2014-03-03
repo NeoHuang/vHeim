@@ -1,0 +1,24 @@
+<div class="row">
+<div class="col-lg-4 col-lg-offset-4">
+<h3>Add Switch </h3>
+  <form name="newSwitchForm">
+    <div class="form-group" ng-class="{'has-error': newSwitchForm.name.$invalid}">
+      <input type="text" name="name" class="form-control" id="name" ng-model="switch.name" placeholder="Switch Name" required>
+    </div>
+    <div class="form-group" ng-class="{'has-error': newSwitchForm.systemCode.$invalid}">
+      <input class="form-control"  placeholder="System Code" name="systemCode" ng-model="switch.systemCode" required>
+    </div>
+    <div class="form-group" ng-class="{'has-error': newSwitchForm.deviceCode.$invalid}">
+      <input class="form-control" placeholder="Device Code" name="deviceCode" ng-model="switch.deviceCode" required>
+    </div>
+    <div class="field">
+      <input type="radio" name="0" value="0" ng-model="switch.protocol"> 0
+      <input type="radio" name="1" value="1" ng-model="switch.protocol"> 1
+      <input type="radio" name="2" value="2" ng-model="switch.protocol"> 2
+    </div>
+    <a href="#" class="btn btn-primary">Cancel</a>
+    <button class="btn btn-primary" ng-click="saveSwitch()" ng-disabled="newSwitchForm.$invalid">Save</button>
+
+  </form>
+</div>
+</div>
