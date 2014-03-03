@@ -16,7 +16,7 @@
 
   <div class="switch-entry switch-listing col-md-5" ng-repeat="switch in switches|filter:query ">
     <span class = "switch-name">{{switch.name}}</span>
-    <div class = "switch-on-off" ng-click="turnSwitch(switch)"> 
+    <div ng-class='switchClass(switch)' ng-click="turnSwitch(switch)"> 
       <span class="glyphicon glyphicon-off"></span>
     </div>
 

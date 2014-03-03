@@ -25,6 +25,14 @@ function SwitchListCtrl($scope, $http){
     });
   };
   
+    $scope.switchClass = function(switchObj){
+      if (switchObj.status){
+        return 'switch-on';
+      }
+      else
+        return 'switch-off';
+    }
+  
 };
 function SwitchNewCtrl($scope, $http, $location){
   $scope.saveSwitch = function(){

@@ -83,8 +83,13 @@ span.glyphicon-off {
   font-size: 3em;
 }
 
-.switch-on-off {
+.switch-on {
   margin: 10px;
   color: rgb(0, 50, 50);
+
+}
+.switch-off {
+  margin: 10px;
+  color: rgb(0, 255, 255);
 
 }
