@@ -6,9 +6,8 @@ function SwitchListCtrl($scope, $http){
 
   $scope.turnSwitch = function(switchObj){
 
-    var onOff = (switchObj._status == true)?'true':'false';
-    var json = '{"status":"' + onOff +'"}';
-    alert(json);
+    var onOff = !switchObj.status;
+    var json = '{"status": ' + onOff +'}';
 
     $http({
       method:'PUT',
@@ -16,7 +15,13 @@ function SwitchListCtrl($scope, $http){
       data: json,
       headers: {'Content-Type': 'application/json', 'ACCEPT': 'application/json'}
     }).success(function(data){
-      $location.path('/switches');
+      for (var i = 0; i < $scope.switches.length; i++){
+        if ($scope.switches[i]._id == switchObj._id){
+          $scope.switches[i].status = onOff;
+          break;
+        }
+
+      }
     });
   };
   

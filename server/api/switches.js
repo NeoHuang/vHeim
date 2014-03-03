@@ -44,7 +44,8 @@ var switches = {
 
   turn: function(req) {
     if (req.params.id){
-      if (req.body.status){
+        console.log(req.body.status);
+      if (req.body.status!==null){
         console.log('switches->turn(' + req.params.id + ')' + (true==req.body.status?'on':'off'));
 
         var opt = {} ;
