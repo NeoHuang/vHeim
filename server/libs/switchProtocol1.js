@@ -12,7 +12,7 @@ exports.switchOff = function(systemCode, deviceCode, callBack) {
 }
 
 exports.switchLight = function(systemCode, deviceCode, onOff, callBack){
-  var command = 'sudo ./send '+ systemCode + ' ' + deviceCode;
+  var command = 'sudo ./exec/send '+ systemCode + ' ' + deviceCode;
   if (onOff == true){
     command += ' 1';
   }
